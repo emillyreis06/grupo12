@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculadora Financeira - Medicamentos Termolábeis</title>
+</head>
+
+<body>
+    <!-- Título Principal -->
+    <h1>Monitoramento de Cadeia Fria - Grupo 12</h1>
+
+    <!-- Seção de Inputs -->
+    <h2>Parâmetros de Entrada</h2>
+
+    <!-- Campos de entrada para os parâmetros básicos -->
+    Volume Anual (unidades):
+    <input type="number" id="imput_volume" placeholder="Ex: 10000">
+    <br>
+    Custo Médio por Medicamento (R$):
+    <input type="number" id="imput_custoMedicamento" placeholder="Ex: 500">
+    <br>
+    Percentual Atual de Perdas (%):</label>
+    <td><input type="number" id="imput_perdaAtual" placeholder="Ex: 20">
+        <br>
+        Custo do Sistema (R$):
+    <td><input type="number" id="imput_custoSistema" placeholder="Ex: 75000">
+        <br>
+        Multas Anuais Evitadas (R$):</label>
+    </td>
+    <td><input type="number" id="imput_multas" placeholder="Ex: 30000">
+        <br>
+        Redução de Perdas (%):
+        <input type="text" id="imput_reducao">
+        <br>
+
+        <!-- Botão para acionar os cálculos -->
+        <button onclick="calcular()">Calcular</button><br>
+
+        <!-- Seção de Resultados -->
+        <h2>Resultados Financeiros</h2>
+        <div>
+            Economia Anual:
+            <!-- Exibição da economia anual calculada -->
+            <div id="div_economiaAnual"> R$ 0.00</div>
+            <br>
+    <td>ROI (Meses para Payback):
+        <!-- Exibição do Retorno sobre Investimento -->
+        <div id="div_roi">0.00 meses</div>
+        <br>
+        Medicamentos Salvos/Ano:
+        <!-- Quantidade estimada de medicamentos preservados -->
+        <div id="div_salvos">0 unidades</div>
+        </div>
+
+        <!-- Informações regulatórias relevantes -->
+        <h3>Conformidade ANVISA RDC 304/2019</h3>
+        <div></div>
+        Temperatura Monitorada: 2°C a 8°C
+        <br>
+        Umidade Máxima: 60%
+        <br>
+        Treinamento de Equipe: Obrigatório
+        </div>
+
+        <!-- Projeção financeira de longo prazo -->
+        <h3>Projeção de 5 Anos</h3>
+        <div id="projecao"></div>
+</body>
+
+</html>
+<script>
+    // Função principal de cálculo
+    function calcular() {
+        //
+        // Coleta de dados dos inputs:
+        // - volume: Quantidade anual de medicamentos transportados
+        // - custoMed: Custo unitário dos medicamentos
+        // - perdaAtual: Percentual atual de perdas (convertido para decimal)
+        // - custoSistema: Custo de implementação do sistema
+        // - multas: Valor estimado de multas evitadas
+        // - reducao: Percentual de redução de perdas (convertido para decimal)
+        //
+        var volume = Number(imput_volume.value)
+        var custoMed = Number(imput_custoMedicamento.value)
+        var perdaAtual = Number(imput_perdaAtual.value) / 100
+        var custoSistema = Number(imput_custoSistema.value)
+        var multas = Number(imput_multas.value)
+        var reducao = Number(imput_reducao.value) / 100
+
+        //
+        // Cálculo da perda financeira atual:
+        // = Volume anual * Custo unitário * Percentual de perdas
+        //
+        var perdaFinanceiraAtual = volume * custoMed * perdaAtual;
+
+        //
+        // Nova perda após implementação do sistema:
+        // = Perda atual * (1 - redução de perdas)
+        //
+        var novaPerda = perdaFinanceiraAtual * (1 - reducao);
+
+        //
+        // Economia anual:
+        // = (Perda atual - Nova perda) + Multas evitadas
+        //
+        var economiaAnual = (perdaFinanceiraAtual - novaPerda) + multas;
+
+        //
+        // Cálculo do ROI (Retorno sobre Investimento):
+        // = (Custo do sistema / Economia anual) * 12 meses
+        // Mostra quanto tempo leva para o investimento se pagar
+        //
+        var roi = (custoSistema / economiaAnual) * 12;
+
+        //
+        // Medicamentos salvos:
+        // = Volume anual * Percentual de perdas * Redução de perdas
+        //
+        var salvos = volume * perdaAtual * reducao;
+
+        // Atualização dos resultados na interface
+        div_economiaAnual.innerHTML = `R$ ${economiaAnual}`
+        div_roi.innerHTML = `${roi} meses`
+        div_salvos.innerHTML = `${salvos} unidades`
+
+
+
+        // Loop para preencher a projeção de 5 anos
+        for (let ano = 1; ano <= 5; ano++) {
+                        // Investimento:
+            //- Apenas no primeiro ano considera o custo total do sistema
+            //
+            var investimento = ano === 1 ? custoSistema : 0;
+                        // Cálculo do saldo acumulado:
+            // = (Economia anual * número de anos) - Investimento total
+            //
+            var saldo = (economiaAnual * ano) - investimento;
+            //
+
+
+            //
+
+        // Atualização da tabela de projeção
+            projecao.innerHTML += `
+            <div><b>Ano:</b> ${ano}</div>
+            <div><b>Perdas (R$):</b> ${novaPerda}</div>
+            <div><b>Economia (R$):</b> ${(economiaAnual * ano)}</div>
+            <div><b>Investimento (R$):</b> ${investimento}</div>
+            <div><b>Saldo (R$):</b> ${saldo}</div>
+            <hr>
+        `;
+        }
+    }
+</script>
