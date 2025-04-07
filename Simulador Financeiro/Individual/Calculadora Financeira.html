@@ -6,7 +6,6 @@
 </head>
 
 <body>
-
     <h1>Monitoramento de Cadeia Fria - Grupo 12</h1>
 
     <h2>Parâmetros de Entrada</h2>
@@ -37,7 +36,7 @@
     <br>
 
     <!-- É o percentual da redução da porcentagem de perdas-->
-    Redução de Perdas (%):
+    Redução de Perdas do percentual (%):
     <input type="text" id="imput_reducao">
     <br>
 
@@ -64,10 +63,9 @@
     <h3>Conformidade ANVISA RDC 304/2019</h3>
     <div></div>
     Temperatura Monitorada: 2°C a 8°C
-    <br>
+    <br><br>
     Umidade Máxima: 60%
     <br>
-    Treinamento de Equipe: Obrigatório
     </div>
 
     <!-- Projeção financeira de longo prazo -->
@@ -114,12 +112,12 @@
         // Cálculo do ROI (Retorno sobre Investimento):
         // = (Custo do sistema / Economia anual) * 12 meses
         // Mostra quanto tempo leva para o investimento se pagar
-        var roi = ((custoSistema / economiaAnual) * 12).toFixed(2)
+        var roi = Math.round(((custoSistema / economiaAnual) * 12))
 
         // Medicamentos salvos:
         // = Volume anual * Percentual de perdas * Redução de perdas
 
-        var salvos = (volume * perdaAtual * reducao).toFixed(2)
+        var salvos = (volume * perdaAtual * reducao)
 
         // Atualização das DIV do parte de Resultados
         div_economiaAnual.innerHTML = `R$ ${economiaAnual}`
@@ -153,7 +151,7 @@
             // Atualização da tabela de projeção
             projecao.innerHTML += `
             <div><b>Ano:</b> ${ano}</div>
-            <div><b>Perdas (R$):</b> ${novaPerda}</div>
+            <div><b>Perdas (R$):</b> ${novaPerda.toFixed(2)}</div>
             <div><b>Economia (R$):</b> ${(economiaAnual * ano)}</div>
             <div><b>Investimento (R$):</b> ${investimento}</div>
             <div><b>Saldo (R$):</b> ${saldo}</div>
