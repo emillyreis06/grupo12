@@ -1,5 +1,6 @@
 #include "DHT.h" //  chamar biblioteca 
 
+
 #define TIPO_SENSOR DHT11 // definir o sensor DHT11
 const int PINO_SENSOR_DHT11 = A1; // armazena dados de saída da porta analogica 
 const int PINO_SENSOR_TEMPERATURA = A0; // armazena dados de saída da porta analogica
