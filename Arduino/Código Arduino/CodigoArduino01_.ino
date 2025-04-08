@@ -27,25 +27,10 @@ if (isnan(temperatura) || isnan(umidade)) { // condição para iniciar leitura d
   Serial.println("Erro ao ler os dados do sensor");
 }else {
  // inicia a impressão dos dados 
-Serial.print("umidade:"); // referente ao nome da label no gráfico
-Serial.print(umidade); // valor do dado do sensor
-Serial.print(" "); // espaçamento entre os dados
-Serial.print("temperatura:");
-Serial.print(temperaturaCelsius);
-Serial.print(" ");
-Serial.print("tempMax:");
-Serial.print(tempmax);
-Serial.print(" ");
-Serial.print("tempMin:");
-Serial.print(tempmin);
-Serial.print(" ");
-Serial.print("UmiMax:");
-Serial.print(umimax);
-Serial.print(" ");
-Serial.print("UmiMin:");
-Serial.print(umimin);
-Serial.println(" ");
+Serial.print(umidade); // referente ao nome da label no gráfico
 
+Serial.print(";"); // espaçamento entre os dados
+Serial.println(temperatura);
 
 
 }
