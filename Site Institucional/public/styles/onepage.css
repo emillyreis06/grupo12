@@ -435,3 +435,25 @@ header nav .menu-primario ul {
     background-color: #ececec;
     border: 2px solid #ff7f00;
 }
+
+
+/*PÁGINA HOME*/
+
+.header .menu-primario .home {
+    
+}
+
+header nav .menu-primario ul{
+    color: #ff7f00;
+}
+
+#entrar_home {
+    background-color: #ff7f00;
+    color: white;
+    border-radius: 5px;
+    width: 50px;
+}
+
+.home {
+    
+}
