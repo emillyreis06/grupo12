@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Sofia Sans", sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 100%;
+    background: #fff;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 5%;
+    top: 20px;
+    width: 100%;
+    align-items: center;
+    z-index: 9999; 
+}
+
+header a h1 span {
+    color: #ff7f00;
+}
+
+header a h1 {
+    color: #000000;
+}
+
+header nav {
+    display: flex;
+    flex-direction: row;
+    width: 700px;
+    gap: 60px;
+}
+
+header nav .menu-primario {
+    display: block;
+    flex-direction: row;
+    width: 50%;
+}
+
+header nav .menu-primario ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 100%;
+    align-items: center;
+    background: #232323;
+    color: #fff;
+}
+
+header nav .menu-secundario {
+    display: block;
+    flex-direction: row;
+    width: 50%;
+}
+
+header nav .menu-secundario ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 100%;
+    align-items: center;
+    background: #ececec;
+    color: #232323;
+
+}
+
+header nav .menu-secundario ul,
+header nav .menu-primario ul,
+header nav .login_cadastro {
+    height: 40px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 200;
+}
+
+header nav .login_cadastro{
+    display: block;
+    flex-direction: row;
+    width: 50%;
+}
+
+header nav .login_cadastro ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 100%;
+    align-items: center;
+    color: #fff;
+    background: #ff7f00;
+    border-radius: 0px 10px 0px 10px;
+    font-weight: 100;
+}
+
+
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 900px;
+    
+}
+
+.projeto {
+    width: 100%;
+    height: 900px;
+    border: 1px solid rgb(255, 0, 0);
+}
+
+.sobre {
+    width: 100%;
+    height: 900px;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.mensagem_contato {
+    width: 100%;
+    height: 225px;
+    border: 1px solid rgb(191, 255, 0);
+}
+
+
+
+
+.container{
+    display: flex;
+     width: 100%;
+     height: 100%;
+ }
+
+ .home img {
+    position: absolute;
+    bottom: 10px;
+ }
+
+
+.home .container .esquerda {
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: center; 
+    height: 100%;
+    width: 50%;
+    background-color: #fff;
+    padding-top: 170px;
+
+
+}
+
+.home .container .direita {
+    height: 100%;
+    width: 50%;
+    background-color: #232323;
+}
+
+
+
+#textoHome_esquerda {
+    text-align: center;
+    font-size: 35px;
+    width: 392px;
+    margin-bottom: 20px; /* Adiciona um pequeno espaço entre h1 e a outra div */
+  }
+  
+  #descHome_esquerda {
+    text-align: center;
+    font-size: 18px;
+    width: 350px;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+  }
+  
+
+.esquerda span {
+    color: #ff7f00;
+}
+
+.esquerda button{
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0px 10px 0px 10px;
+    height: 40px;
+    font-weight: 220px;
+    padding:10px;
+       
+}
+
+ .boxes {
+    display: flex;
+    border: #ececec;
+    gap: 10px;  /*espaçamento entre os elementos*/
+    flex-direction: row;
+    justify-content: center;
+    padding: 200px;
+    
+}
+
+.box-1  {
+    background-color: #fff;
+    width: 200px;
+    height: 120px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.box-1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    ;
+}
+
+.box-2 {
+    background-color: #fff;
+    width: 200px;
+    height: 120px;
+    border-radius: 10px;
+}
+
+.box-3 {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    width: 200px;
+    border-radius: 10px;
+}
+

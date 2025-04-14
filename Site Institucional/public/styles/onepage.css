@@ -88,7 +88,21 @@ header nav .menu-primario ul {
     font-weight: 200;
 }
 
+#entrar_home{
+    display: block;
+    text-align: center;
+    line-height: 40px;
+    width: 100px;
+    height: 40px;
+    border-radius: 0px 10px 0px 10px;
+    color: #fff;
+    background: #ff7f00;
+}
+
 .home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 900px;
     border: 1px solid green;
@@ -439,21 +453,3 @@ header nav .menu-primario ul {
 
 /*PÁGINA HOME*/
 
-.header .menu-primario .home {
-    
-}
-
-header nav .menu-primario ul{
-    color: #ff7f00;
-}
-
-#entrar_home {
-    background-color: #ff7f00;
-    color: white;
-    border-radius: 5px;
-    width: 50px;
-}
-
-.home {
-    
-}
